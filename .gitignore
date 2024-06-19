@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.log
+.idea/
+.vscode/
+config/dbConfig.js
+.DS_Store
+Thumbs.db
+dist/
+build/
+tmp/
+temp/
