@@ -1,4 +1,5 @@
 # hydrohero
+
 Panduan Penggunaan Repository
 Berikut adalah panduan lengkap untuk mengkloning dan menjalankan repository ini di lingkungan lokal Anda.
 
@@ -30,7 +31,7 @@ Instal semua dependensi yang diperlukan dengan menjalankan:
 npm install
 ```
 
-## Langkah 3: Konfigurasi Database
+## Langkah 3: Konfigurasi Database dan Variabel Lingkungan
 Pastikan MySQL berjalan dan buat database yang diperlukan. Salin file `config/dbConfig.example.js` menjadi `config/dbConfig.js` dan sesuaikan dengan pengaturan MySQL Anda:
 
 ```bash
@@ -38,6 +39,16 @@ cp config/dbConfig.example.js config/dbConfig.js
 ```
 
 Edit file `config/dbConfig.js` dan gantikan `NAMA_DATABASE`, `USERNAME_DATABASE`, dan `PASSWORD_DATABASE` dengan detail yang sesuai.
+
+Buat file `.env` di root direktori project Anda dan tambahkan variabel lingkungan berikut:
+
+```plaintext:.env
+JWT_SECRET=your_jwt_secret_key
+OPENWEATHER_API_KEY=your_OPENWEATHER_key
+IPSTACK_API_KEY=your_IPSTACK_key
+```
+
+Gantikan `your_jwt_secret_key`, `your_OPENWEATHER_key`, `your_IPSTACK_key`,  dengan nilai yang sesuai.
 
 ## Langkah 4: Menjalankan Aplikasi
 Untuk menjalankan server, gunakan perintah berikut di terminal:
@@ -107,6 +118,9 @@ Setelah mendaftar, pengguna dapat login dengan mengirimkan permintaan POST ke en
 ### Rute yang Dilindungi
 - **Rute Dilindungi**: Endpoint yang hanya bisa diakses jika pengguna sudah login dan memiliki token yang valid.
 
+### Cuaca
+- **Cuaca**: Endpoint untuk mendapatkan data cuaca berdasarkan lokasi IP pengguna.
+
 ### Contoh Penggunaan API di Postman
 - **Register**: Mengirim permintaan POST ke `/api/register` dengan data pengguna.
 - **Login**: Mengirim permintaan POST ke `/api/login` dengan kredensial pengguna.
@@ -116,5 +130,6 @@ Setelah mendaftar, pengguna dapat login dengan mengirimkan permintaan POST ke en
 - **Menambahkan Asupan Air**: Mengirim permintaan POST ke `/api/profile/profiles/:id/water-intake` dengan data asupan air.
 - **Prediksi Dehidrasi**: Mengirim permintaan POST ke `/api/predict` dengan data yang diperlukan.
 - **Logout**: Mengirim permintaan POST ke `/api/logout`.
+- **Cuaca**: Mengirim permintaan GET ke `/api/weather` untuk mendapatkan data cuaca.
 
 Dengan panduan ini, pengguna akan lebih mudah mengikuti langkah-langkah untuk mengatur dan menjalankan aplikasi serta memahami fitur-fitur yang tersedia.
