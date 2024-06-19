@@ -1,4 +1,4 @@
-# hydrohero
+# Hydrohero
 
 Panduan Penggunaan Repository
 Berikut adalah panduan lengkap untuk mengkloning dan menjalankan repository ini di lingkungan lokal Anda.
